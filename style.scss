@@ -1,0 +1,423 @@
+$primary: #11998e;
+$secondary: #38ef7d;
+$white: #fff;
+$gray: #9b9b9b;
+
+@import url(https://fonts.googleapis.com/css?family=Cabin+Sketch:700|Patrick+Hand+SC|Waiting+for+the+Sunrise);
+body{
+  font-family:Patrick Hand SC;
+  font-size:25px;
+  background-image:url(/img/blue.webp);
+  background-size:cover;
+  background-repeat: no-repeat;
+  color: whitesmoke;
+
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 800px;
+    border: 2px solid black;
+    background-color:#343434;
+    border-radius: 10px;
+    background-image: url(/img/bg5.jpg);
+    background-size:cover;
+
+    h1{
+        margin-top: 110px;
+        text-align: center;
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .form__group {
+            position: relative;
+            padding: 15px 0 0;
+            margin-top: 10px;
+            width: 50%;
+        }
+          
+        .form__field {
+            font-family: inherit;
+            width: 100%;
+            border: 0;
+            border-bottom: 2px solid $gray;
+            outline: 0;
+            font-size: 1.3rem;
+            color: whitesmoke;
+            padding: 7px 0;
+            background: transparent;
+            transition: border-color 0.2s;
+          
+        &::placeholder {
+              color: transparent;
+        }
+          
+        &:placeholder-shown ~ .form__label {
+              font-size: 1.3rem;
+              cursor: text;
+              top: 20px;
+            }
+        }
+          
+        .form__label {
+            position: absolute;
+            top: 0;
+            display: block;
+            transition: 0.2s;
+            font-size: 1rem;
+            color: $gray;
+        }
+          
+        .form__field:focus {
+            ~ .form__label {
+              position: absolute;
+              top: 0;
+              display: block;
+              transition: 0.2s;
+              font-size: 1rem;
+              color: $primary;
+              font-weight:700;    
+        }
+            padding-bottom: 6px;  
+            font-weight: 700;
+            border-width: 3px;
+            border-image: linear-gradient(to right, $primary,$secondary);
+            border-image-slice: 1;
+        }
+          
+          .form__field{
+            &:required,&:invalid { box-shadow:none; }
+        }
+    }
+
+    .thickness{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 10px;
+
+        &__select:hover{
+            border-color: #38ef7d;
+        }
+    
+        &__select{
+            width: 200px;
+            height: 30px;
+            text-align: center;
+            background-color: #343434;
+            border-color: #fff;
+            border-radius: 7px;
+            color: #dddcdc;
+        }
+    }
+
+    .size{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    
+    
+        &__form-control {
+            font-family: system-ui, sans-serif;
+            font-size: 2rem;
+            font-weight: bold;
+            line-height: 1.1;
+            display: grid;
+            grid-template-columns: 1em auto;
+            gap: 0.5em;
+          }
+          
+          &__form-control:focus-within {
+            color: var(--form-control-color);
+          }
+          
+          input[type="radio"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: var(--form-background);
+            margin: 0;
+          
+            font: inherit;
+            color: currentColor;
+            width: 70px;
+            height: 70px;
+            border: 2px solid currentColor;
+            border-radius: 50%;
+            transform: translateY(-0.075em);
+          
+            display: grid;
+            place-content: center;
+          }
+          
+          input[type="radio"]::before {
+            content: "";
+            width: 0.85em;
+            height: 0.85em;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em var(--form-control-color);
+            background-color: rgb(0, 0, 0);
+          }
+          
+          input[type="radio"]:checked::before {
+            transform: scale(1);
+          }
+          input[type="radio"]:hover {
+            background-color: #38ef7d;
+            opacity: 0.7;
+            border: 2px solid rgb(0, 59, 0);
+          }
+    
+          input[type="radio"]:active {
+            background-color: #38ef7d;
+            opacity: 0.4;
+          }
+          
+          input[type="radio"]:focus {
+            background-color: #38ef7d;
+            opacity: 0.4;
+          }
+    }
+
+    .toppings{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+        margin-left: 190px;
+    
+        &__form-control{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            width: 290px;
+        }
+    
+        input[type="checkbox"] {
+            appearance: none;
+            background-color: #fff;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.15em;
+            height: 1.15em;
+            border: 0.15em solid currentColor;
+            border-radius: 0.15em;
+            transform: translateY(-0.075em);
+            display: grid;
+            place-content: center;
+          }
+    
+          input[type="checkbox"]::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em var(--form-control-color);
+            background-color: #38ef7d;
+            transform-origin: bottom left;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+          }
+          
+          input[type="checkbox"]:checked::before {
+            transform: scale(1);
+          }
+    
+          input[type="checkbox"]:focus {
+            outline: max(2px, 0.15em) solid currentColor;
+            outline-offset: max(2px, 0.15em);
+          }
+    }
+
+    .add{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        gap: 150px;
+        
+            &__form-control{
+             display: flex;
+             flex-direction: row;
+             gap: 10px;
+            }
+        
+            input[type="checkbox"] {
+                appearance: none;
+                background-color: #fff;
+                margin: 0;
+                font: inherit;
+                color: currentColor;
+                width: 1.15em;
+                height: 1.15em;
+                border: 0.15em solid currentColor;
+                border-radius: 0.15em;
+                transform: translateY(-0.075em);
+                display: grid;
+                place-content: center;
+              }
+        
+              input[type="checkbox"]::before {
+                content: "";
+                width: 0.65em;
+                height: 0.65em;
+                transform: scale(0);
+                transition: 120ms transform ease-in-out;
+                box-shadow: inset 1em 1em var(--form-control-color);
+                background-color: #38ef7d;
+                transform-origin: bottom left;
+                clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+              }
+              
+              input[type="checkbox"]:checked::before {
+                transform: scale(1);
+              }
+        
+              input[type="checkbox"]:focus {
+                outline: max(2px, 0.15em) solid currentColor;
+                outline-offset: max(2px, 0.15em);
+              }
+        }
+        
+        .button-86 {
+            all: unset;
+            width: 100px;
+            height: 30px;
+            font-size: 16px;
+            background: transparent;
+            border: none;
+            position: relative;
+            color: #f0f0f0;
+            cursor: pointer;
+            z-index: 1;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+        
+        .button-86::after,
+        .button-86::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -99999;
+            transition: all .4s;
+        }
+        
+        .button-86::before {
+            transform: translate(0%, 0%);
+            width: 100%;
+            height: 100%;
+            background: rgb(182, 118, 1);
+            border-radius: 10px;
+        }
+        
+        .button-86::after {
+            transform: translate(10px, 10px);
+            width: 35px;
+            height: 35px;
+            background: #ffffff15;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 50px;
+        }
+        
+        .button-86:hover::before {
+            transform: translate(5%, 20%);
+            width: 110%;
+            height: 110%;
+        }
+        
+        .button-86:hover::after {
+            border-radius: 10px;
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+        }
+        
+        .button-86:active::after {
+            transition: 0s;
+            transform: translate(0, 5%);
+        }
+}
+
+.span1{
+    position: relative;
+    right: 25px;
+    top:25px;
+    font-size: 10px;
+}
+
+.span2{
+    position: relative;
+    right:25px;
+    top:25px;
+    font-size: 10px;
+}
+
+.span3{
+    position: relative;
+    right: 25px;
+    top: 25px;
+    font-size: 10px;
+}
+
+.onpizza{
+    text-align: start;
+    margin-top: 50px;
+    position: relative;
+    right: 160px;
+}
+
+.addh2{
+    text-align: start;
+    margin-top: 50px;
+    position: relative;
+    right: 180px;
+}
+
+.error-msg, .error-msg1, .error-msg2, .error-msg3 {
+    padding-bottom: 10px;
+    color: red;
+    font-size: 16px;
+    display: block;
+  }
+
+  .error-msg--hidden, .error-msg--hidden1, .error-msg--hidden2, .error-msg--hidden3 {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+.result{
+    background: url(/img/order.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 10px;
+    border-radius: 10px;
+    color: #28282d;
+    margin-bottom: 10px;
+}

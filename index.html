@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <section class="container">
+
+        <h1>Pizza order</h1>
+
+        <form class="form browsers" id="form">
+
+            <div class="form__group field">
+                <input type="text" class="form__field" placeholder="Username" name="name" id='username' required />
+                <label for="name" class="form__label">Username</label>
+                <span class="error-msg1 error-msg--hidden1">Must contain at least 3 letters!</span>
+            </div>
+
+            <div class="form__group field">
+                <input type="number" class="form__field" placeholder="Phone number" name="phonenumber" id='phonenumber' required />
+                <label for="number" class="form__label">Phone number</label>
+                <span class="error-msg2 error-msg--hidden2">Must contain at least 7 numbers!</span>
+            </div>
+
+            <div class="form__group field">
+                <input type="text" class="form__field" placeholder="address" name="address" id='address' required />
+                <label for="address" class="form__label">User address</label>
+                <span class="error-msg3 error-msg--hidden3">Must contain at least 4 letters!</span>
+            </div>
+
+            <div class="thickness">
+                <h2>Dough thickness:</h2>
+
+                <select class="thickness__select" id="thickness" required>
+                    <option name="thickness" value="">-- none --</option>
+                    <option name="thickness" value="Thin">Thin</option>
+                    <option name="thickness" value="Medium">Medium</option>
+                    <option name="thickness" value="Thick">Thick</option>
+                </select>
+            </div>
+            
+            <div class="size">
+                <h2>Size:</h2>
+
+                <label class="size__form-control">
+                    <input type="radio" name="size" id="size" placeholder="25sm" value="Thin" required/>
+                    <span class="span1">25sm</span>
+                </label>
+                
+                <label class="size__form-control">
+                    <input type="radio" name="size" id="size" placeholder="30sm" value="Medium" required/>
+                    <span class="span2">30sm</span>
+                </label>
+
+                <label class="size__form-control">
+                    <input type="radio" name="size" id="size" placeholder="35sm" value="Thick" required/>
+                    <span class="span3">35sm</span>
+                </label>
+            </div>
+
+            <h2 class="onpizza">On Pizza:</h2>
+            
+            <div class="toppings">
+
+                <label class="toppings__form-control">
+                    <input class="checkboxes" type="checkbox" name="toppings" id="box" value="Tomato"/>
+                    Tomato
+                </label>
+                  
+                <label class="toppings__form-control">
+                    <input class="checkboxes" type="checkbox" name="toppings" id="box" value="Turkey meat"/>
+                    Turkey meat
+                </label>
+
+                <label class="toppings__form-control">
+                    <input class="checkboxes" type="checkbox" name="toppings" id="box" value="Olive"/>
+                    olive
+                </label>
+                  
+                <label class="toppings__form-control">
+                    <input class="checkboxes" type="checkbox" name="toppings" id="box" value="Pickled cucumber"/>
+                    Pickled cucumber
+                </label>
+
+                <label class="toppings__form-control">
+                    <input class="checkboxes" type="checkbox" name="toppings" id="box" value="Mushroom"/>
+                    Mushroom
+                </label>
+                  
+                <label class="toppings__form-control">
+                    <input class="checkboxes" type="checkbox" name="toppings" id="box" value="Horse meat"/>
+                    Horse meat
+                </label>
+
+            </div>
+
+            <h2 class="addh2">Add:</h2>
+
+            <div class="add">
+
+                <label class="add__form-control">
+                    <input type="checkbox" name="adding" value="Pepper" />
+                    Pepper
+                </label>
+                  
+                <label class="add__form-control">
+                    <input type="checkbox" name="adding" value="Sausages" />
+                    Sausages
+                </label>
+
+            </div>
+
+            <button class="button-86" role="button" id="submit" type="submit">Save</button>
+
+        </form>
+
+        <section class="result" id="summary">
+            <div id="order"></div>
+         </section>
+    
+
+
+    </section>
+    
+
+
+    <script src="/script.js"></script>
+</body>
+</html>
